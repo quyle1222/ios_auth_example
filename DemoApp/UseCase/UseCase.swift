@@ -10,6 +10,12 @@ class UseCase {
     static let instance =  UseCase()
     private var user: User = User(username: "", password: "")
     private var token:String?
+    private var listCategory:[Category] = [
+        Category(title: "Đồ gia dụng"),
+        Category(title: "Đồ điện"),
+        Category(title: "Đồ mỹ phẩm"),
+        Category(title: "Đồ xây dựng"),
+    ]
     
     func updateAccount(text:String){
         self.user.username = text

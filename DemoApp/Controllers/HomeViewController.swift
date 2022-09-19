@@ -7,12 +7,11 @@
 
 import UIKit
 
-class HomeViewController: UIViewController{
-    @IBOutlet weak var labelToken: UILabel!
-    let dataSource = UseCase.instance
+class HomeViewController: UIViewController {
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
-        labelToken.text = dataSource.getToken()
     }
 }

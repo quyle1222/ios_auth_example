@@ -17,12 +17,12 @@ class ViewController: UIViewController {
     
     @IBAction func onLogin(_ sender: UIButton) {
         dataStore.login {
-            (token:Bool) in
+           [weak self] (token:Bool) in
             if(token == true){
                 DispatchQueue.main.async {
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                    self.navigationController?.pushViewController(nextViewController, animated: true)
+                    self?.navigationController?.pushViewController(nextViewController, animated: true)
                 }
             }
         }
