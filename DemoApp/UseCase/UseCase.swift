@@ -17,6 +17,10 @@ class UseCase {
         Category(title: "Đồ xây dựng"),
     ]
     
+    func getListCategory ()-> [Category]{
+        return listCategory
+    }
+    
     func updateAccount(text:String){
         self.user.username = text
     }
@@ -29,6 +33,7 @@ class UseCase {
         guard let json = try? JSONEncoder().encode(user) else {return success(false)}
         RestHelper().post(url: "auth/login", data: json)
         {data, response, error in
+            print("data",data)
             if let data = data {
                 do {
                     let json = try JSONDecoder().decode(AuthResponse.self, from: data)

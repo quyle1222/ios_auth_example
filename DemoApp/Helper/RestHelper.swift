@@ -9,7 +9,7 @@ import Foundation
 
 class RestHelper {
     private let session = URLSession.shared
-    private let baseURL = "http://10.20.22.173:8088/"
+    private let baseURL = "http://localhost:8088/"
     
     func post(url:String, data:Data?, handle: @escaping (Data?,URLResponse?,Error?)->Void ){
         guard let serviceUrl = URL(string: baseURL + url) else { return }
