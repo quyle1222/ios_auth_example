@@ -35,4 +35,8 @@ class UseCase {
             }
         }
     }
+    
+    func getToken() -> String?{
+        return token
+    }
 }

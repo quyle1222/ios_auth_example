@@ -20,10 +20,10 @@ class ViewController: UIViewController {
             (token:Bool) in
             if(token == true){
                 DispatchQueue.main.async {
-                    let viewController = HomeViewController()
-                    self.present(viewController, animated: true)
-                    }
-               
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                    self.navigationController?.pushViewController(nextViewController, animated: true)
+                }
             }
         }
     }
@@ -36,6 +36,5 @@ class ViewController: UIViewController {
         dataStore.updatePassword(text: sender.text ?? "")
     }
 }
-
 
 
